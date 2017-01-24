@@ -45,6 +45,9 @@
 <h1>Container html for the Jquery</h1>
 <code>
 <section id="jsonContainer" class="container clearfix">
+</section>
+</code>
+<code>
 <script>
 				$(document).ready(function(){
 					var root = 'https://jsonplaceholder.typicode.com';
@@ -93,6 +96,5 @@
 						});
 					});
 				});
-			</script>
-</section>
+			</script>      
 </code>
