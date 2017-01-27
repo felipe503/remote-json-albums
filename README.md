@@ -43,6 +43,61 @@
 				</div><!-- /.container-fluid -->
 			</nav>
 		</section>
+		<style>
+			figure{margin-bottom:10px;}
+		</style>
+		<section id="jsonContainer" class="container clearfix">
+		
+			<script>
+				$(document).ready(function(){
+					var root = 'https://jsonplaceholder.typicode.com';
+					$.ajax({
+					  url: root + '/photos/',
+					  method: 'GET'
+					}).then(function(data) {
+						var albums = data;
+						var template = '';
+						var navLinks ='';
+						navLinks+='<li class="album-1">';
+							navLinks+='<a href="1">Album 1</a>';
+						navLinks+='</li>';
+						var albumId = 1;
+						$.each(albums, function(){
+							if(albumId!=this.albumId)
+							{
+								albumId = this.albumId;
+								navLinks+='<li class="album-'+this.albumId+'">';
+									navLinks+='<a href="'+this.albumId+'">Album '+this.albumId+'</a>';
+								navLinks+='</li>';
+							}
+							
+							template+='<figure class="col-md-2 col-xs-6 album-'+this.albumId+'">';
+								template+='<img src="'+this.thumbnailUrl+'" class="img-responsive lazyload"/>';
+								template+='<figcaption>'+this.title+'</figcaption>';
+							template+='</figure>';
+						});
+						$('.dropdown-menu').html(navLinks);
+						$('#jsonContainer').html(template);
+						$('.dropdown-menu li a').click(function(e){
+							e.preventDefault();
+							$('.dropdown-toggle').html($(this).text()+'<span class="caret"></span>');
+							toShow = $('figure.album-'+$(this).attr('href'));
+							album = $(this).attr('href');
+							$.each($('figure'), function(){
+								if($(this).hasClass('album-'+album))
+								{
+									$(this).show();
+								}
+								else
+								{
+									$(this).hide();
+								}
+							});
+						});
+					});
+				});
+			</script>
+		</section>
 	</body>
 
 </html>
