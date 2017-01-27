@@ -1,6 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
+# Loading public data
+
+> I created an interface that allows you to display albums by showing or hiding them, using $ ajax and Jquery
+
+##Usage
+
+	<html>
+		<head>
 		<meta charset="UTF-8">
 		<title>Styles</title>
 		<!-- Latest compiled and minified CSS -->
