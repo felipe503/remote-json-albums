@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Title of the document</title>
-	</head>
-
-	<body>
-		<h1>Content of the document master</h1>
-	</body>
-
-</html>
+# Open data test
+<article>
+	<p>Using open data from <a href="https://jsonplaceholder.typicode.com/photos/"></a></p>
+	<p>Loading data with $ajax and displaying lazyload with lazysizes plugin.</p>
+</article>
